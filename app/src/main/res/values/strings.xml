@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DateYourEve</string>
+    <string name="verify_your_number">Verify Your Number</string>
+    <string name="todo">TODO</string>
+    <string name="_91">+91</string>
+    <string name="_8209062638">8209062638</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="date_your_eve">Date Your Eve</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="_123456">123456</string>
+    <string name="submit">Submit</string>
+    <string name="log_out">Log Out</string>
+</resources>
