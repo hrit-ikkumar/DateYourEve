@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        // when user will enter into the application
         if(mCurrentUser == null)
         {
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
