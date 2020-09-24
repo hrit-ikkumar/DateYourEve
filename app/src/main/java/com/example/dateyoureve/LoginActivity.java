@@ -6,14 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -77,18 +82,31 @@ public class LoginActivity extends AppCompatActivity {
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-
+                //signInWithPhoneAuthCredential(phoneAuthCredential);
             }
 
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
-
+                mLoginFeedbackText.setText(R.string.please_fill_in_the_form_to_continue);
+                mLoginFeedbackText.setVisibility(View.VISIBLE);
+                mGenerateBtn.setEnabled(true);
             }
 
             @Override
-            public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            public void onCodeSent(@NonNull final String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                 super.onCodeSent(s, forceResendingToken);
+
+                /*new android.os.Handler().postDelayed(
+                        new Runnable() {
+                            public void run() {
+                                Intent otpIntent = new Intent(LoginActivity.this, OTPVerification.class);
+                                otpIntent.putExtra("AuthCredentials",s);
+                                startActivity(otpIntent);
+                            }
+                        }, 1000
+                );*/
                 Intent otpIntent = new Intent(LoginActivity.this, OTPVerification.class);
+                otpIntent.putExtra("AuthCredentials",s);
                 startActivity(otpIntent);
 
             }
@@ -100,12 +118,42 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         if(mCurrentUser != null)
         {
-            Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
-            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(homeIntent);
-            finish();
+            sendUserToHome();
         }
+    }
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            /*Log.d(TAG, "signInWithCredential:success");
+
+                            FirebaseUser user = task.getResult().getUser();*/
+                            // ...
+                            sendUserToHome();
+
+                        } else {
+                            // Sign in failed, display a message and update the UI
+                            //Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                // The verification code entered was invalid
+                                mLoginFeedbackText.setVisibility(View.VISIBLE);
+                                mLoginFeedbackText.setText("There was an error verifying OTP");
+                            }
+                        }
+                        mGenerateBtn.setEnabled(true);
+                    }
+                });
+    }
+
+    private void sendUserToHome() {
+        Intent homeIntent = new Intent(LoginActivity.this, LogOut.class);
+        homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(homeIntent);
+        finish();
     }
 
 }
