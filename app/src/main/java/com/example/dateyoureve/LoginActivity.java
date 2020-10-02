@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
+import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -70,19 +71,30 @@ public class LoginActivity extends AppCompatActivity {
                     mGenerateBtn.setEnabled(false);
 
                     PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                            complete_phone_number,
-                            60,
+                            complete_phone_number.toString(),
+                            30L,
                             TimeUnit.SECONDS,
                             LoginActivity.this,
                             new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                                 @Override
                                 public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                    //signInWithPhoneAuthCredential(phoneAuthCredential);
+                                    signInWithPhoneAuthCredential(phoneAuthCredential);
                                 }
 
                                 @Override
                                 public void onVerificationFailed(@NonNull FirebaseException e) {
-                                    mLoginFeedbackText.setText(R.string.please_fill_in_the_form_to_continue);
+
+                                    if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                                        // Invalid request
+                                        // ...
+                                        mLoginFeedbackText.setText(R.string.please_fill_in_the_form_to_continue);
+                                    } else if (e instanceof FirebaseTooManyRequestsException) {
+                                        // The SMS quota for the project has been exceeded
+                                        // ...
+                                        mLoginFeedbackText.setText(R.string.sms_quota_exceeded);
+                                    }
+                                    else
+                                        mLoginFeedbackText.setText(R.string.please_fill_in_the_form_to_continue);
                                     mLoginFeedbackText.setVisibility(View.VISIBLE);
                                     mGenerateBtn.setEnabled(true);
                                 }
