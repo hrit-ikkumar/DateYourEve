@@ -74,43 +74,37 @@ public class LoginActivity extends AppCompatActivity {
                             60,
                             TimeUnit.SECONDS,
                             LoginActivity.this,
-                            mCallbacks
+                            new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                                @Override
+                                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                    //signInWithPhoneAuthCredential(phoneAuthCredential);
+                                }
+
+                                @Override
+                                public void onVerificationFailed(@NonNull FirebaseException e) {
+                                    mLoginFeedbackText.setText(R.string.please_fill_in_the_form_to_continue);
+                                    mLoginFeedbackText.setVisibility(View.VISIBLE);
+                                    mGenerateBtn.setEnabled(true);
+                                }
+
+                                @Override
+                                public void onCodeSent(@NonNull final String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                    super.onCodeSent(s, forceResendingToken);
+                                    new android.os.Handler().postDelayed(
+                                            new Runnable() {
+                                                public void run() {
+                                                    Intent otpIntent = new Intent(LoginActivity.this, OTPVerification.class);
+                                                    otpIntent.putExtra("AuthCredentials",s);
+                                                    startActivity(otpIntent);
+                                                }
+                                            }, 10000
+                                    );
+                                }
+                            }
                     );
                 }
             }
         });
-        mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            @Override
-            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                //signInWithPhoneAuthCredential(phoneAuthCredential);
-            }
-
-            @Override
-            public void onVerificationFailed(@NonNull FirebaseException e) {
-                mLoginFeedbackText.setText(R.string.please_fill_in_the_form_to_continue);
-                mLoginFeedbackText.setVisibility(View.VISIBLE);
-                mGenerateBtn.setEnabled(true);
-            }
-
-            @Override
-            public void onCodeSent(@NonNull final String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                super.onCodeSent(s, forceResendingToken);
-
-                /*new android.os.Handler().postDelayed(
-                        new Runnable() {
-                            public void run() {
-                                Intent otpIntent = new Intent(LoginActivity.this, OTPVerification.class);
-                                otpIntent.putExtra("AuthCredentials",s);
-                                startActivity(otpIntent);
-                            }
-                        }, 1000
-                );*/
-                Intent otpIntent = new Intent(LoginActivity.this, OTPVerification.class);
-                otpIntent.putExtra("AuthCredentials",s);
-                startActivity(otpIntent);
-
-            }
-        };
     }
 
     @Override
@@ -140,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
                                 mLoginFeedbackText.setVisibility(View.VISIBLE);
-                                mLoginFeedbackText.setText("There was an error verifying OTP");
+                                mLoginFeedbackText.setText("There was an error verifying Phone number");
                             }
                         }
                         mGenerateBtn.setEnabled(true);
