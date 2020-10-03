@@ -27,6 +27,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class LoginActivity extends AppCompatActivity {
+
+    // Firebase Authentication Credentials
     private FirebaseAuth mAuth;
     private FirebaseUser mCurrentUser;
 
@@ -37,21 +39,24 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressBar mLoginProgress;
     private TextView mLoginFeedbackText;
 
+    // Callback
     private  PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login); // layout set as activity_login
 
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
 
+        // extracted all the values from the layout
         mCountryCode = findViewById(R.id.country_code);
         mPhoneNumber = findViewById(R.id.phone_number);
         mGenerateBtn = findViewById(R.id.login_button);
         mLoginFeedbackText = findViewById(R.id.login_form_feedback);
 
+        // Event Listener for Generate OTP button
         mGenerateBtn.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -59,7 +64,8 @@ public class LoginActivity extends AppCompatActivity {
                 String country_code = mCountryCode.getText().toString();
                 String phone_number = mPhoneNumber.getText().toString();
 
-                String complete_phone_number = "+" + country_code + phone_number;
+                // complete phone number example = "+91 8209062638"
+                String complete_phone_number = "+" + country_code+ " " + phone_number;
 
                 if(country_code.isEmpty() || phone_number.isEmpty())
                 {
@@ -71,8 +77,8 @@ public class LoginActivity extends AppCompatActivity {
                     mGenerateBtn.setEnabled(false);
 
                     PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                            complete_phone_number.toString(),
-                            30L,
+                            complete_phone_number,
+                            60,
                             TimeUnit.SECONDS,
                             LoginActivity.this,
                             new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -94,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                                         mLoginFeedbackText.setText(R.string.sms_quota_exceeded);
                                     }
                                     else
-                                        mLoginFeedbackText.setText(R.string.please_fill_in_the_form_to_continue);
+                                        mLoginFeedbackText.setText(e.getMessage());
                                     mLoginFeedbackText.setVisibility(View.VISIBLE);
                                     mGenerateBtn.setEnabled(true);
                                 }
@@ -109,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     otpIntent.putExtra("AuthCredentials",s);
                                                     startActivity(otpIntent);
                                                 }
-                                            }, 10000
+                                            }, 100000
                                     );
                                 }
                             }
@@ -161,5 +167,4 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(homeIntent);
         finish();
     }
-
 }
