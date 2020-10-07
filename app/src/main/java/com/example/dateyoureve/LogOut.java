@@ -44,7 +44,7 @@ public class LogOut extends AppCompatActivity {
     }
     private void sendUsertoLogin()
     {
-        Intent logoutIntent = new Intent(LogOut.this, LoginActivity.class);
+        Intent logoutIntent = new Intent(LogOut.this, SettingsActivity.class);
         logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(logoutIntent);

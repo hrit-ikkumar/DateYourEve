@@ -13,7 +13,7 @@
         android:layout_marginTop="233dp"
         android:layout_marginBottom="284dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/log_out"
+        android:text="@string/settings"
         android:textColor="#3F51B5"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

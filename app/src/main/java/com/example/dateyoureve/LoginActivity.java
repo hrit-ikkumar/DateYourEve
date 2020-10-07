@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     otpIntent.putExtra("AuthCredentials",s);
                                                     startActivity(otpIntent);
                                                 }
-                                            }, 10000
+                                            }, 7000
                                     );
                                 }
                             }

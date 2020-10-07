@@ -12,4 +12,5 @@
     <string name="log_out">Log Out</string>
     <string name="please_fill_in_the_form_to_continue">Please Fill in the form to continue.</string>
     <string name="sms_quota_exceeded">SMS Quota has been exceeded!</string>
+    <string name="settings">Settings</string>
 </resources>
