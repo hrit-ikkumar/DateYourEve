@@ -28,7 +28,7 @@ public class LogOut extends AppCompatActivity {
         mlogoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAuth.signOut();
+                //mAuth.signOut();
                 sendUsertoLogin();
             }
         });

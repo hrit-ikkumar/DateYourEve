@@ -9,9 +9,6 @@
         <EditTextPreference
             android:key="Gender"
             android:title="Gender" />
-        <EditTextPreference
-            android:key="Phone"
-            android:title="Phone" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Night Mode">
         <CheckBoxPreference android:title="Night Mode" android:key="Night" android:defaultValue="false" android:summaryOn="Night Mode is Activated" android:summaryOff="Night Mode is Deactivated"/>
