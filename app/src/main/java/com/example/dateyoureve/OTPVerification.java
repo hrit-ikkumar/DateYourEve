@@ -105,7 +105,7 @@ public class OTPVerification extends AppCompatActivity {
     }
 
     public void sendUserToHome() {
-        Intent user_profile = new Intent(OTPVerification.this, LogOut.class);
+        Intent user_profile = new Intent(OTPVerification.this, MenuActivity.class);
         user_profile.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         user_profile.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(user_profile);

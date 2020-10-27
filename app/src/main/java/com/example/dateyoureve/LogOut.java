@@ -28,7 +28,7 @@ public class LogOut extends AppCompatActivity {
         mlogoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //mAuth.signOut();
+                mAuth.signOut();
                 sendUsertoLogin();
             }
         });
@@ -44,7 +44,7 @@ public class LogOut extends AppCompatActivity {
     }
     private void sendUsertoLogin()
     {
-        Intent logoutIntent = new Intent(LogOut.this, SettingsActivity.class);
+        Intent logoutIntent = new Intent(LogOut.this, MainActivity.class);
         logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(logoutIntent);

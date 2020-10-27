@@ -13,4 +13,10 @@
     <string name="please_fill_in_the_form_to_continue">Please Fill in the form to continue.</string>
     <string name="sms_quota_exceeded">SMS Quota has been exceeded!</string>
     <string name="settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="create_event">Create</string>
+    <string name="notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
