@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mPhoneNumber;
 
     private Button mGenerateBtn;
-    private ProgressBar mLoginProgress;
     private TextView mLoginFeedbackText;
 
     // Callback

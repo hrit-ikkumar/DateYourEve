@@ -25,7 +25,7 @@ public class MenuActivity extends AppCompatActivity {
         // Assign Variable
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Add Home Fragment in Deque List
+        /* Add Home Fragment in Deque List */
         integerDeque.push(R.id.bn_home);
         // Load Home Fragment
         loadFragment(new HomeFragment());
