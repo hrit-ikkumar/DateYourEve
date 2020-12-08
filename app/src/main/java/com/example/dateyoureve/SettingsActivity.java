@@ -41,25 +41,24 @@ public class SettingsActivity extends PreferenceActivity {
     private void load_setting(){
 
         String sp_name = PreferenceManager.getDefaultSharedPreferences(this).getString("Name", null);
-
         String sp_gender = PreferenceManager.getDefaultSharedPreferences(this).getString("Gender", null);
         // storing date into firestore
 
-        DocumentReference documentReference = FStore.collection("users").document(userId);
-        Map<String, Object> user = new HashMap<>();
-        user.put("Name", sp_name);
-        user.put("Gender",sp_gender);
-        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                // do nothing
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // do nothing
-            }
-        });
+//        DocumentReference documentReference = FStore.collection("users").document(userId);
+//        Map<String, Object> user = new HashMap<>();
+//        user.put("Name", sp_name);
+//        user.put("Gender",sp_gender);
+//        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void aVoid) {
+//                // do nothing
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                // do nothing
+//            }
+//        });
         SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
         boolean chk_night = sp.getBoolean( "Night",false);
         if(chk_night){
@@ -77,7 +76,6 @@ public class SettingsActivity extends PreferenceActivity {
                 boolean chk=(boolean)obj;
                 if(chk){
                     getListView().setBackgroundColor(Color.parseColor("#222222"));
-
                 }
                 else{
                     getListView().setBackgroundColor(Color.parseColor("#ffffff"));

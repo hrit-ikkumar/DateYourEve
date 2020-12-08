@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="30dp"
+    android:background="#ffffff"
     tools:context=".SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/search_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/search"
-        android:textSize="50sp"
+        android:background="@drawable/search_layout"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/search_here"
+        android:textColor="#999999"
         android:textStyle="bold"
-        android:layout_centerInParent="true" />
+        android:autofillHints="" />
+
+    <ImageButton
+        android:id="@+id/search_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/search_field"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/search_field"
+        android:layout_marginEnd="30dp"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/search_button"
+        android:src="@drawable/search_button" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/result_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_field"
+        android:layout_marginTop="50dp" />
 
 </RelativeLayout>

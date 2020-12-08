@@ -2,12 +2,21 @@ package com.example.dateyoureve;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -68,6 +77,26 @@ public class MenuActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            NotificationChannel channel = new NotificationChannel("MyNotifications","MyNotifications", NotificationManager.IMPORTANCE_DEFAULT);
+
+            manager.createNotificationChannel(channel);
+        }
+
+        FirebaseMessaging.getInstance().subscribeToTopic("General")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Successful";
+                        if (!task.isSuccessful()) {
+                            msg = "Failed";
+                        }
+                        Toast.makeText(MenuActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
     private Fragment getFragment(int itemId) {
         switch (itemId){

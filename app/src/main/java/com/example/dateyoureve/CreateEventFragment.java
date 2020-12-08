@@ -1,26 +1,27 @@
 package com.example.dateyoureve;
 
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.nfc.TagLostException;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CreateEventFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CreateEventFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+    private RelativeLayout relativeLayout;
+    private TextView textView;
+
     private String mParam1;
     private String mParam2;
 
@@ -28,15 +29,6 @@ public class CreateEventFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CreateEventFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static CreateEventFragment newInstance(String param1, String param2) {
         CreateEventFragment fragment = new CreateEventFragment();
         Bundle args = new Bundle();
@@ -59,6 +51,25 @@ public class CreateEventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+//        View view = inflater.inflate(R.layout.fragment_create_event, container, false);
+//        relativeLayout = (RelativeLayout)view.findViewById(R.id.create_id);
+//        textView = (TextView)view.findViewById(R.id.create);
+//        load_settings();
+//        return view;
         return inflater.inflate(R.layout.fragment_create_event, container, false);
     }
+
+//    private void load_settings(){
+//        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
+//        boolean chk_night = sp.getBoolean( "Night",false);
+//        if(chk_night){
+//            relativeLayout.setBackgroundColor(Color.parseColor("#222222"));
+//            textView.setTextColor(Color.parseColor("#ffffff"));
+//        }
+//        else{
+//            relativeLayout.setBackgroundColor(Color.parseColor("#ffffff"));
+//            textView.setTextColor(Color.parseColor("#000000"));
+//        }
+
+//    }
 }
