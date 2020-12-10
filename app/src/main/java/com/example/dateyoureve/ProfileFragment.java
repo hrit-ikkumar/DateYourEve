@@ -36,12 +36,13 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private FirebaseFirestore firebaseFirestore;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseUser firebaseUser;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseAuth mAuth;
+    private FirebaseUser mCurrentUser;
     private FirebaseStorage firebaseStorage;
     private DocumentReference documentReference;
     private StorageReference storageReference;
+    String userId;
     private ImageView profile_image;
     private TextView name, gender,bio,location;
 
@@ -72,9 +73,10 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile,container,false);
         profile_image=(ImageView)view.findViewById(R.id.profile_image);
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseUser = firebaseAuth.getCurrentUser();
-        documentReference = firebaseFirestore.collection("users").document("firebaseUser");
+        mAuth = FirebaseAuth.getInstance();
+        mCurrentUser = mAuth.getCurrentUser();
+        userId = mCurrentUser.getUid();
+        documentReference = db.collection("users").document(userId);
         storageReference = firebaseStorage.getInstance().getReference();
 
         documentReference.get()

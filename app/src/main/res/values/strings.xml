@@ -29,4 +29,6 @@
     <string name="name">Name</string>
     <string name="bio">Bio</string>
     <string name="location">Location</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>

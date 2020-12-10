@@ -77,15 +77,15 @@ public class SearchFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-        mSearchField=(EditText)view.findViewById(R.id.search_field);
-        mSearchBtn=(ImageButton)view.findViewById(R.id.search_btn);
-        firebaseFirestore=FirebaseFirestore.getInstance();
-        mResultList=(RecyclerView)view.findViewById(R.id.result_list);
-        mResultList.setLayoutManager(new LinearLayoutManager(getContext()));
-        // mResultList.setHasFixedSize(true);
-        mSearchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        mSearchField=(EditText)view.findViewById(R.id.search_field);
+//        mSearchBtn=(ImageButton)view.findViewById(R.id.search_btn);
+//        firebaseFirestore=FirebaseFirestore.getInstance();
+//        mResultList=(RecyclerView)view.findViewById(R.id.result_list);
+//        mResultList.setLayoutManager(new LinearLayoutManager(getContext()));
+//        // mResultList.setHasFixedSize(true);
+//        mSearchBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
                 //String searchText=mSearchField.getText().toString();
                 String searchText="Free Food";
 //                CollectionReference eventref=firebaseFirestore.collection("events");
@@ -99,15 +99,15 @@ public class SearchFragment extends Fragment {
 //                        new FirebaseRecyclerOptions.Builder<Event>()
 //                                .setQuery(query,Event.class)
 //                                .build();
-                FirebaseRecyclerOptions<Event> options = new
-                        FirebaseRecyclerOptions.Builder<Event>()
-                        .setQuery(query, Event.class)
-                        .build();
-                adapter=new MyAdapter(options);
-                mResultList.setAdapter(adapter);
-
-            }
-        });
+//                FirebaseRecyclerOptions<Event> options = new
+//                        FirebaseRecyclerOptions.Builder<Event>()
+//                        .setQuery(query, Event.class)
+//                        .build();
+//                adapter=new MyAdapter(options);
+//                mResultList.setAdapter(adapter);
+//
+//            }
+//        });
         return view;
     }
 

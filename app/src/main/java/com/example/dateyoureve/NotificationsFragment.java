@@ -59,17 +59,17 @@ public class NotificationsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
-        not_list=(RecyclerView)view.findViewById(R.id.result_list);
-        not_list.setLayoutManager(new LinearLayoutManager(getContext()));
+//        not_list=(RecyclerView)view.findViewById(R.id.result_list);
+//        not_list.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        Query query= FirebaseFirestore.getInstance().collection("users");
-        FirebaseRecyclerOptions<com.example.dateyoureve.Notification> options=
-                new FirebaseRecyclerOptions.Builder<com.example.dateyoureve.Notification>()
-                    .setQuery(query,Notification.class)
-                    .build();
-
-        adapter=new NotAdapter(options);
-        not_list.setAdapter(adapter);
+//        Query query= FirebaseFirestore.getInstance().collection("users");
+//        FirebaseRecyclerOptions<com.example.dateyoureve.Notification> options=
+//                new FirebaseRecyclerOptions.Builder<com.example.dateyoureve.Notification>()
+//                    .setQuery(query,Notification.class)
+//                    .build();
+//
+//        adapter=new NotAdapter(options);
+//        not_list.setAdapter(adapter);
         return view;
     }
 

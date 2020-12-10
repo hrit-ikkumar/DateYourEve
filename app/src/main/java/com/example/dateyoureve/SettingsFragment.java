@@ -30,7 +30,7 @@ public class SettingsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private Button mlogoutBtn, mSettingsBtn;
+    private Button mlogoutBtn, mSettingsBtn, mEditProfileBtn;
 
     private FirebaseAuth mAuth;
     private FirebaseUser mCurrentUser;
@@ -92,7 +92,14 @@ public class SettingsFragment extends Fragment {
                 sendUsertoSettings();
             }
         });
-
+        mEditProfileBtn=(Button)view.findViewById(R.id.edit_profile_btn);
+        mEditProfileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), CreateProfile.class);
+                startActivity(i);
+            }
+        });
         return view;
     }
 
