@@ -1,14 +1,23 @@
-package com.example.dateyoureve.MenuActivitySection;
+package com.example.dateyoureve.Activities.MenuActivitySection;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.dateyoureve.Activities.MainActivity;
+import com.example.dateyoureve.Activities.MenuActivitySection.CreateEventSection.CreateEventFragment;
+import com.example.dateyoureve.Activities.MenuActivitySection.HomeSection.HomeFragment;
+import com.example.dateyoureve.Activities.MenuActivitySection.NotificationSection.NotificationsFragment;
+import com.example.dateyoureve.Activities.MenuActivitySection.ProfileSection.ProfileFragment;
+import com.example.dateyoureve.Activities.MenuActivitySection.SearchSection.SearchFragment;
 import com.example.dateyoureve.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -17,11 +26,26 @@ public class MenuActivity extends AppCompatActivity {
     // Initialie variable
     BottomNavigationView bottomNavigationView;
     Deque<Integer> integerDeque = new ArrayDeque<>(5);
+    private FirebaseAuth mAuth;
+    private FirebaseUser mCurrentUser;
     boolean flag=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        // Checking whether user is not logged in. We will redirect him to Main Acitivity
+        mAuth = FirebaseAuth.getInstance();
+        mCurrentUser = mAuth.getCurrentUser();
+
+        if(mCurrentUser == null)
+        {
+            Intent homeIntent = new Intent(MenuActivity.this, MainActivity.class);
+            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(homeIntent);
+            finish();
+        }
 
         // Assign Variable
         bottomNavigationView = findViewById(R.id.bottom_navigation);

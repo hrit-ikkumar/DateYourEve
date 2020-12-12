@@ -1,4 +1,4 @@
-package com.example.dateyoureve.Activities;
+package com.example.dateyoureve.Activities.AuthActivities;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -7,20 +7,11 @@ import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 
 import com.example.dateyoureve.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class SettingsActivity extends PreferenceActivity {
     private FirebaseAuth mAuth;

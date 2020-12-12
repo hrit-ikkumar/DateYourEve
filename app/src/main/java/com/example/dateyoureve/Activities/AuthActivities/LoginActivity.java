@@ -1,4 +1,4 @@
-package com.example.dateyoureve.Activities;
+package com.example.dateyoureve.Activities.AuthActivities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.dateyoureve.Activities.MainActivity;
 import com.example.dateyoureve.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -159,7 +160,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendUserToHome() {
-        Intent homeIntent = new Intent(LoginActivity.this, LogOut.class);
+        Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(homeIntent);

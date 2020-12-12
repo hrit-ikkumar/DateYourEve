@@ -1,4 +1,4 @@
-package com.example.dateyoureve.MenuActivitySection;
+package com.example.dateyoureve.Activities.MenuActivitySection.ProfileSection;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,24 +9,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.dateyoureve.Activities.MainActivity;
-import com.example.dateyoureve.Activities.SettingsActivity;
 import com.example.dateyoureve.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ProfileFragment#newInstance} factory method to
@@ -125,7 +119,7 @@ public class ProfileFragment extends Fragment {
         documentReference = db.collection("users").document(userId);
         storageReference = firebaseStorage.getInstance().getReference();
 
-        documentReference.get()
+        /*documentReference.get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -146,7 +140,7 @@ public class ProfileFragment extends Fragment {
                         }
                     }
                 });
-
+            */
         return view;
     }
 
@@ -166,7 +160,7 @@ public class ProfileFragment extends Fragment {
         ((Activity) getActivity()).overridePendingTransition(0, 0);
     }
 
-    private void sendUsertoSettings()
+    private void sendUsertoEditProfile()
     {
         Intent i = new Intent(getActivity(), EditProfileActivity.class);
         startActivity(i);

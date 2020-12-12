@@ -1,4 +1,4 @@
-package com.example.dateyoureve.MenuActivitySection;
+package com.example.dateyoureve.Activities.MenuActivitySection.ProfileSection;
 
 import android.content.ContentResolver;
 import android.content.Intent;

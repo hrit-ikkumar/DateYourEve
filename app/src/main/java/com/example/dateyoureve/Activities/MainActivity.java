@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.dateyoureve.Activities.AuthActivities.LoginActivity;
 import com.example.dateyoureve.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
     private void sendUserToHome() {
-        Intent homeIntent = new Intent(MainActivity.this, LogOut.class);
+        Intent homeIntent = new Intent(MainActivity.this, LoginActivity.class);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(homeIntent);

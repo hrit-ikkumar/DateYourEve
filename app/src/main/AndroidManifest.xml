@@ -9,18 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MenuActivitySection.EditProfileActivity"></activity>
-        <activity android:name=".MenuActivitySection.MenuActivity">
+        <activity android:name=".Activities.MenuActivitySection.ProfileSection.EditProfileActivity"></activity>
+        <activity android:name=".Activities.MenuActivitySection.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.SettingsActivity" />
-        <activity android:name=".Activities.OTPVerification" />
-        <activity android:name=".Activities.LogOut" />
-        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.AuthActivities.SettingsActivity" />
+        <activity android:name=".Activities.AuthActivities.OTPVerification" />
+        <activity android:name=".Activities.AuthActivities.LoginActivity" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

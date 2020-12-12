@@ -1,4 +1,4 @@
-package com.example.dateyoureve.Activities;
+package com.example.dateyoureve.Activities.AuthActivities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.dateyoureve.MenuActivitySection.MenuActivity;
+import com.example.dateyoureve.Activities.MenuActivitySection.MenuActivity;
 import com.example.dateyoureve.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
