@@ -28,6 +28,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -41,7 +42,6 @@ public class EditProfileActivity extends AppCompatActivity {
     EditText name,gender,bio,location;
     Button save_btn;
     ProgressBar progressBar;
-    ImageView imageView;
     private Uri imageUri;
     private static final int PICK_IMAGE=1;
     UploadTask uploadTask;
@@ -49,6 +49,7 @@ public class EditProfileActivity extends AppCompatActivity {
     StorageReference storageReference;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference documentReference;
+    ImageView imageView;
     String userId;
     FirebaseAuth mAuth;
     FirebaseUser mCurrentUser;
@@ -147,15 +148,44 @@ public class EditProfileActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Intent intent=new Intent(EditProfileActivity.this, MainActivity.class);
-                    startActivity(intent);
+//                    Intent intent=new Intent(EditProfileActivity.this, MainActivity.class);
+//                    startActivity(intent);
                 }
             });
         }
         else{
             Toast.makeText(EditProfileActivity.this,"All Fields Required",Toast.LENGTH_SHORT).show();
         }
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        documentReference.get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(task.getResult().exists()){
+                            String fs_name = task.getResult().getString("Name");
+                            String fs_gender = task.getResult().getString("Gender");
+                            String fs_bio = task.getResult().getString("Bio");
+                            String fs_location = task.getResult().getString("Location");
+                            String fs_image_link = task.getResult().getString("ProfileImage");
+                            Picasso.get().load(fs_image_link).into(imageView);
+                            name.setText(fs_name);
+                            gender.setText(fs_gender);
+                            bio.setText(fs_bio);
+                            location.setText(fs_location);
+                        }
+                        else{
+                            Toast.makeText(EditProfileActivity.this,"No Profile Exists",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+            }
+        });
     }
 
 }

@@ -1,18 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.MenuActivitySection.CreateEventSection.CreateEventFragment">
+    tools:context=".Activities.MenuActivitySection.CreateEventSection.CreateEventFragment"
+    android:orientation="vertical"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Main Heading -->
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create_event"
-        android:textSize="50sp"
+        android:text="Create New Event"
+        android:layout_marginTop="10dp"
+        android:textSize="40dp"
+        android:background="@color/cardview_light_background"
         android:textStyle="bold"
-        android:layout_centerInParent="true" />
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"/>
 
-</RelativeLayout>
+    <!-- Event Name -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Event Name:"
+            style="@style/horizontal_create_event_textview" />
+
+        <EditText
+            android:id="@+id/profile_name"
+            android:hint="Intro to Club"
+            style="@style/horizontal_create_event_text" />
+
+    </LinearLayout>
+
+
+    <!-- Event Entry Fee  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Entry Fee:"
+            style="@style/horizontal_create_event_textview"
+            />
+
+        <EditText
+            android:id="@+id/event_fee"
+            android:hint="100"
+            style="@style/horizontal_create_event_text"
+            />
+
+    </LinearLayout>
+
+
+    <!-- Event Description: -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="Event Description:"
+            style="@style/horizontal_create_event_textview"
+            />
+
+        <EditText
+            android:id="@+id/event_description"
+            style="@style/vertical_create_event_textview"
+            android:hint="A journey of unimaginable learning and growth" />
+
+    </LinearLayout>
+
+    <!--EventType -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Event Type:"
+            style="@style/horizontal_create_event_textview"
+            />
+
+        <EditText
+            android:id="@+id/event_type"
+            android:hint="Paid"
+            style="@style/horizontal_create_event_text"
+            />
+
+    </LinearLayout>
+
+
+    <!-- Event Location -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Event Location:"
+            style="@style/horizontal_create_event_textview"
+            />
+
+        <EditText
+            android:id="@+id/event_location"
+            android:hint="Udaipur, India"
+            style="@style/horizontal_create_event_text"
+            />
+
+    </LinearLayout>
+
+    <!-- Event MaxSeats -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Event Max Seats:"
+            style="@style/horizontal_create_event_textview"
+            />
+
+        <EditText
+            android:id="@+id/event_max_seats"
+            android:hint="34"
+            style="@style/horizontal_create_event_text"
+            />
+
+    </LinearLayout>
+
+    <!-- Event Start Time -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Event Start Time:"
+            style="@style/horizontal_create_event_textview"
+            />
+
+        <EditText
+            android:id="@+id/event_start_time"
+            android:hint="31 December"
+            style="@style/horizontal_create_event_text"
+            />
+
+    </LinearLayout>
+
+    <!-- Event End Time -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Event End Time: "
+            style="@style/horizontal_create_event_textview"/>
+
+        <EditText
+            android:id="@+id/event_end_time"
+            android:hint="1 Jan"
+            style="@style/horizontal_create_event_text"
+            />
+
+    </LinearLayout>
+    <!-- Registration Start Time -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Registration Start Time:"
+            style="@style/horizontal_create_event_textview"
+            />
+
+        <EditText
+            android:id="@+id/event_registration_start_time"
+            android:hint="31 December"
+            style="@style/horizontal_create_event_text"
+            />
+
+    </LinearLayout>
+    <!-- Registration End Time -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Event Registration End Time: "
+            style="@style/horizontal_create_event_textview"/>
+
+        <EditText
+            android:id="@+id/event_registration_end_time"
+            android:hint="1 Jan"
+            style="@style/horizontal_create_event_text"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/create_event"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:layout_marginLeft="80dp"/>
+
+        <Button
+            android:id="@+id/cancel_event"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:text="Cancel" />
+    </LinearLayout>
+
+
+</LinearLayout>

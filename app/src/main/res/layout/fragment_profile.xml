@@ -13,7 +13,8 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:background="@drawable/profile_image"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo"
+        android:visibility="visible" />
 
     <LinearLayout
         android:layout_width="match_parent"

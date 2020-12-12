@@ -67,6 +67,7 @@
         android:id="@+id/login_button"
         android:layout_width="189dp"
         android:layout_height="68dp"
+        android:shadowColor="#FFFFFF"
         android:text="@string/generate_otp"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.dateyoureve.Activities.MainActivity;
+import com.example.dateyoureve.Activities.MenuActivitySection.MenuActivity;
 import com.example.dateyoureve.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -160,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendUserToHome() {
-        Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent homeIntent = new Intent(LoginActivity.this, MenuActivity.class);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(homeIntent);

@@ -7,4 +7,35 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="horizontal_create_event_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+
+    <style name="horizontal_create_event_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="vertical_create_event_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
 </resources>
