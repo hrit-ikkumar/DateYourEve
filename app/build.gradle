@@ -31,8 +31,14 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.google.firebase:firebase-firestore:21.7.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // FirebaseUI for Firebase Realtime Database
+    implementation 'com.firebaseui:firebase-ui-database:7.0.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:6.2.0'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }

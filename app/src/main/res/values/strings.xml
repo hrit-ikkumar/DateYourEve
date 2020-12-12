@@ -19,4 +19,16 @@
     <string name="notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_button">Search_Button</string>
+    <string name="free_food">Free Food</string>
+    <string name="in_this_event_we_will_get_free_food">In this Event We Will Get Free Food</string>
+    <string name="time">Time</string>
+    <string name="fee">Fee</string>
+    <string name="search_here">Search Here</string>
+    <string name="gender">Gender</string>
+    <string name="name">Name</string>
+    <string name="bio">Bio</string>
+    <string name="location">Location</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>

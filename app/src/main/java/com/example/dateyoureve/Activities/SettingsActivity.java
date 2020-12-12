@@ -1,4 +1,4 @@
-package com.example.dateyoureve;
+package com.example.dateyoureve.Activities;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.dateyoureve.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,7 +46,7 @@ public class SettingsActivity extends PreferenceActivity {
         String sp_gender = PreferenceManager.getDefaultSharedPreferences(this).getString("Gender", null);
         // storing date into firestore
 
-        DocumentReference documentReference = FStore.collection("users").document(userId);
+        /*DocumentReference documentReference = FStore.collection("users").document(userId);
         Map<String, Object> user = new HashMap<>();
         user.put("Name", sp_name);
         user.put("Gender",sp_gender);
@@ -59,7 +60,7 @@ public class SettingsActivity extends PreferenceActivity {
             public void onFailure(@NonNull Exception e) {
                 // do nothing
             }
-        });
+        });*/
         SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
         boolean chk_night = sp.getBoolean( "Night",false);
         if(chk_night){

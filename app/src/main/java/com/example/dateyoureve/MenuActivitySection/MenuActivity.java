@@ -1,4 +1,4 @@
-package com.example.dateyoureve;
+package com.example.dateyoureve.MenuActivitySection;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.dateyoureve.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayDeque;
@@ -95,7 +96,7 @@ public class MenuActivity extends AppCompatActivity {
                 // Set checked settings fragment
                 bottomNavigationView.getMenu().getItem(4).setChecked(true);
                 // Return settings fragment
-                return new SettingsFragment();
+                return new ProfileFragment();
         }
         // Set Default Home Fragment
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
