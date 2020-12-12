@@ -23,9 +23,11 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class MenuActivity extends AppCompatActivity {
+
     // Initialie variable
     BottomNavigationView bottomNavigationView;
     Deque<Integer> integerDeque = new ArrayDeque<>(5);
+
     private FirebaseAuth mAuth;
     private FirebaseUser mCurrentUser;
     boolean flag=true;
@@ -116,7 +118,7 @@ public class MenuActivity extends AppCompatActivity {
                 bottomNavigationView.getMenu().getItem(3).setChecked(true);
                 // Return notifications fragment
                 return new NotificationsFragment();
-            case R.id.bn_settings:
+            case R.id.bn_profile:
                 // Set checked settings fragment
                 bottomNavigationView.getMenu().getItem(4).setChecked(true);
                 // Return settings fragment

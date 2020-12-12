@@ -17,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dateyoureve.Activities.MainActivity;
+import com.example.dateyoureve.Activities.MenuActivitySection.MenuActivity;
 import com.example.dateyoureve.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -131,8 +133,8 @@ public class EditProfileActivity extends AppCompatActivity {
                                     public void onSuccess(Void aVoid) {
                                         progressBar.setVisibility(View.INVISIBLE);
                                         Toast.makeText(EditProfileActivity.this,"Profile Updated Successfully",Toast.LENGTH_SHORT).show();
-//                                        Intent intent=new Intent(CreateProfile.this,ProfileFragment.class);
-//                                        startActivity(intent);
+                                        Intent intent=new Intent(EditProfileActivity.this, MenuActivity.class);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -145,6 +147,8 @@ public class EditProfileActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
+                    Intent intent=new Intent(EditProfileActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
             });
         }

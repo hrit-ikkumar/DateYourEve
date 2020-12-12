@@ -20,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login); // activity_login layout will be loaded
 
+        // getting instance of Firebase
         mAuth = FirebaseAuth.getInstance();
-        mCurrentUser = mAuth.getCurrentUser();
+        mCurrentUser = mAuth.getCurrentUser(); // Current User
 
 
     }
@@ -29,10 +30,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        // If user does exist then simply send that to home
         if(mCurrentUser != null)
         {
             sendUserToHome();
         }
+        // Otherwise do proper authentication using OTP Methodology
         // when user will enter into the application, will be rediredted to LoginActivity
         Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(loginIntent);
         finish();
     }
+
+    // When User exists
     private void sendUserToHome() {
         Intent homeIntent = new Intent(MainActivity.this, LoginActivity.class);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
