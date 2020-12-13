@@ -4,24 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="gravity"
+    android:background="@color/colorPrimary"
     tools:context=".Activities.MainActivity">
 
     <TextView
         android:id="@+id/date_your_eve"
-        android:layout_width="276dp"
-        android:layout_height="63dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:breakStrategy="high_quality"
         android:fontFamily="sans-serif-medium"
+        android:shadowColor="#F300213A"
         android:text="@string/date_your_eve"
-        android:textAlignment="center"
-        android:textColor="#3F51B5"
+        android:textAlignment="gravity"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575"
         tools:text="Date Your Eve" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,9 @@ package com.example.dateyoureve.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.example.dateyoureve.Activities.AuthActivities.LoginActivity;
 import com.example.dateyoureve.R;
@@ -18,38 +21,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login); // activity_login layout will be loaded
+
+        // Code for hiding action bar or title bar in activity and we also commented the code which brings the full screen mode
+        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
+        getSupportActionBar().hide(); // hide the title bar
+        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        //        WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
+        setContentView(R.layout.activity_main); // activity_main layout will be loaded
 
         // getting instance of Firebase
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser(); // Current User
 
+        int splashTimeOut = 2000;
 
-    }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // If user does exist then simply send that to home
-        if(mCurrentUser != null)
-        {
-            sendUserToHome();
-        }
-        // Otherwise do proper authentication using OTP Methodology
-        // when user will enter into the application, will be rediredted to LoginActivity
-        Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-        loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(loginIntent);
-        finish();
-    }
+            }
+        },splashTimeOut);
 
-    // When User exists
-    private void sendUserToHome() {
-        Intent homeIntent = new Intent(MainActivity.this, LoginActivity.class);
-        homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(homeIntent);
-        finish();
     }
 }

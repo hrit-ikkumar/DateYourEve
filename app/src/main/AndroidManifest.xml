@@ -17,7 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.AuthActivities.SettingsActivity" />
         <activity android:name=".Activities.AuthActivities.OTPVerification" />
         <activity android:name=".Activities.AuthActivities.LoginActivity" />
         <activity android:name=".Activities.MainActivity">
