@@ -12,6 +12,7 @@
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/profile_image"
         android:contentDescription="@string/todo"
         android:visibility="visible" />
@@ -33,7 +34,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/profile_name"
+            android:id="@+id/event_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -141,16 +142,16 @@
 
         <Button
             android:id="@+id/edit_profile_btn"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/edit_profile"
-            android:layout_marginLeft="60dp"/>
+            android:layout_marginLeft="45dp"/>
 
         <Button
             android:id="@+id/logout_btn"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="80dp"
             android:text="@string/log_out" />
     </LinearLayout>
 

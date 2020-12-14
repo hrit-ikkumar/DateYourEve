@@ -116,7 +116,7 @@ public class ProfileFragment extends Fragment {
         });
 
         profile_image=(ImageView)view.findViewById(R.id.profile_image);
-        name=(TextView)view.findViewById(R.id.profile_name);
+        name=(TextView)view.findViewById(R.id.event_name);
         gender=(TextView)view.findViewById(R.id.profile_gender);
         bio=(TextView)view.findViewById(R.id.profile_bio);
         location=(TextView)view.findViewById(R.id.profile_location);

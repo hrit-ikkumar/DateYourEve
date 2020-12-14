@@ -39,7 +39,7 @@
                     style="@style/horizontal_create_event_textview" />
 
                 <EditText
-                    android:id="@+id/profile_name"
+                    android:id="@+id/event_name"
                     android:hint="Intro to Club"
                     style="@style/horizontal_create_event_text" />
 
@@ -165,7 +165,8 @@
 
                 <EditText
                     android:id="@+id/event_start_time"
-                    android:hint="31 December"
+                    android:hint="@string/format"
+                    android:inputType="datetime"
                     style="@style/horizontal_create_event_text"
                     />
 
@@ -184,7 +185,8 @@
 
                 <EditText
                     android:id="@+id/event_end_time"
-                    android:hint="1 Jan"
+                    android:hint="@string/format"
+                    android:inputType="datetime"
                     style="@style/horizontal_create_event_text"
                     />
 
@@ -203,7 +205,8 @@
 
                 <EditText
                     android:id="@+id/event_registration_start_time"
-                    android:hint="31 December"
+                    android:hint="@string/format"
+                    android:inputType="datetime"
                     style="@style/horizontal_create_event_text"
                     />
 
@@ -221,7 +224,8 @@
 
                 <EditText
                     android:id="@+id/event_registration_end_time"
-                    android:hint="1 Jan"
+                    android:hint="@string/format"
+                    android:inputType="datetime"
                     style="@style/horizontal_create_event_text"
                     />
 
@@ -239,7 +243,8 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Create"
-                    android:layout_marginLeft="80dp"/>
+                    android:layout_marginLeft="80dp"
+                    />
 
                 <Button
                     android:id="@+id/cancel_event"
