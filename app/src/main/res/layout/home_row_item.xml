@@ -5,174 +5,298 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
+            android:id="@+id/layout_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_margin="5dp"
-            android:orientation="horizontal"
-            android:id="@+id/layout_id">
+            android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/homeItemImage"
-                android:src="@drawable/ic_launcher_background"/>
-            <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="78dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <LinearLayout
+                android:layout_width="317dp"
+                android:layout_height="141dp"
+                android:layout_marginLeft="3dp"
                 android:orientation="vertical">
+
                 <TextView
+                    android:id="@+id/homeItemName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/homeItemName"
-                    android:text="Event Name"
-                    android:gravity="left"
                     android:layout_marginTop="5dp"
-                    android:textColor="@color/eventColor"
+                    android:gravity="center_horizontal"
+                    android:text="Event Name"
                     android:textAllCaps="true"
-                    android:textStyle="bold"
-                    android:textSize="25dp"/>
+                    android:textColor="@color/eventColor"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="Location: "
-                            android:gravity="left"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold"
+                        android:layout_height="25dp"
+                        android:orientation="horizontal">
 
-                            android:textColor="#000000"
-                            android:textSize="15dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
-                            android:id="@+id/homeItemEventLocation"
-                            android:text="Location"
-                            android:gravity="left"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold"
-                            android:textSize="15dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="Type:"
-                            android:gravity="left"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="bold"
-                            android:textColor="#000000"
-                            android:textSize="15dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:id="@+id/homeItemEvenType"
-                            android:text="FREE"
-                            android:textColor="#0d4930"
-                            android:gravity="left"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="bold"
-                            android:outlineSpotShadowColor="@color/colorPrimary"
-                            android:textSize="15dp"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="Seats: "
-                            android:gravity="left"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold"
+                            android:orientation="horizontal">
 
-                            android:textColor="#000000"
-                            android:textSize="15dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:id="@+id/homeItemEventMaxSeats"
-                            android:text="150"
-                            android:gravity="left"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold"
-                            android:textSize="15dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="Fee: "
-                            android:gravity="left"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="10dp"
-                            android:textColor="#000000"
-                            android:textSize="15dp"/>
-                        <TextView
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="Location: "
+                                android:textColor="#000000"
+
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/homeItemEventLocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="Location"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/homeItemEventFee"
-                            android:text="$100"
-                            android:gravity="left"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="bold"
-                            android:textSize="15dp"/>
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="2dp"
+                                android:gravity="left"
+                                android:text="Type:"
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/homeItemEvenType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="2dp"
+                                android:gravity="left"
+                                android:outlineSpotShadowColor="@color/colorPrimary"
+                                android:text="FREE"
+                                android:textColor="#0d4930"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="Start: "
-                            android:gravity="left"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold"
+                        android:layout_height="25dp"
+                        android:orientation="horizontal">
 
-                            android:textColor="#000000"
-                            android:textSize="15dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
-                            android:id="@+id/homeItemEventStart"
-                            android:text="10AM"
-                            android:gravity="left"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold"
-                            android:textSize="15dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="End: "
-                            android:gravity="left"
-                            android:layout_marginTop="3dp"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="10dp"
-                            android:textColor="#000000"
-                            android:textSize="15dp"/>
-                        <TextView
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="Seats: "
+                                android:textColor="#000000"
+
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/homeItemEventMaxSeats"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="150"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/homeItemEvenEnd"
-                            android:text="2PM"
-                            android:gravity="left"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="bold"
-                            android:textSize="15dp"/>
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="Fee: "
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/homeItemEventFee"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="2dp"
+                                android:gravity="left"
+                                android:text="$100"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="Start: "
+                                android:textColor="#000000"
+
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                            <ScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:scrollbars="horizontal"
+                                android:layout_marginTop="3dp">
+                                <TextView
+                                    android:id="@+id/homeItemEventStart"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="left"
+                                    android:text="10AM"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </ScrollView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="End: "
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/homeItemEventEnd"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="2dp"
+                                android:gravity="left"
+                                android:text="2PM"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="Reg. Start: "
+                                android:textColor="#000000"
+
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/homeItemEventRegistrationStart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="10AM"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="3dp"
+                                android:gravity="left"
+                                android:text="Reg. End: "
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/homeItemEventRegistrationEnd"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="2dp"
+                                android:gravity="left"
+                                android:text="2PM"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
                     </LinearLayout>
                 </LinearLayout>
 

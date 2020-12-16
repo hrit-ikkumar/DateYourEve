@@ -119,7 +119,32 @@ public class HomeFragment extends Fragment {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 String currEvent = Objects.requireNonNull(document.get("EventName")).toString();
                                 //Log.d(TAG, document.getId() + " => " + currEvent);
-                                homeItemList.add(new HomeModel(R.drawable.ic_event_foreground,  document.get("EventName").toString()));
+                                /*
+                                int eventImage,
+                                 String eventName,
+                                 String eventLocation,
+                                 String entryFee,
+                                 String entryType,
+                                 String eventMaxSeats,
+                                 String eventStartTime,
+                                 String eventEndTime,
+                                 String eventDescription,
+                                 String registrationStartTime,
+                                 String registrationEndTime
+                                 */
+                                homeItemList.add(
+                                        new HomeModel(R.drawable.ic_event_foreground,
+                                                 document.get("EventName").toString(),
+                                                 document.get("EventLocation").toString(),
+                                                 document.get("EntryFee").toString(),
+                                                 document.get("EntryType").toString(),
+                                                 document.get("EventMaxSeats").toString(),
+                                                 document.get("EventStartTime").toString(),
+                                                 document.get("EventEndTime").toString(),
+                                                 document.get("EventDescription").toString(),
+                                                 document.get("RegistrationStartTime").toString(),
+                                                 document.get("RegistrationEndTime").toString())
+                                );
                             }
 
                         } else {
