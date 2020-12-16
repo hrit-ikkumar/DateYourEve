@@ -1,28 +1,28 @@
 package com.example.dateyoureve.Activities.MenuActivitySection.HomeSection;
 
 public class HomeModel {
-    int image;
-    String name;
+    int entryFee;
+    String eventName;
 
-    public HomeModel(int image, String name)
+    public HomeModel(int image, String eventName)
     {
-        this.image = image;
-        this.name = name;
+        this.entryFee = image;
+        this.eventName = eventName;
     }
 
-    public int getImage() {
-        return image;
+    public int getEntryFee() {
+        return entryFee;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setEntryFee(int entryFee) {
+        this.entryFee = entryFee;
     }
 
-    public String getName() {
-        return name;
+    public String getEventName() {
+        return eventName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 }

@@ -29,8 +29,8 @@ public class HomeItemAdapter extends RecyclerView.Adapter<HomeItemAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull HomeItemAdapter.ViewHolder holder, int position) {
-        holder.itemImage.setImageResource(hoemItemList.get(position).getImage());
-        holder.itemText.setText(hoemItemList.get(position).getName());
+        holder.itemImage.setImageResource(hoemItemList.get(position).getEntryFee());
+        holder.itemText.setText(hoemItemList.get(position).getEventName());
     }
 
     @Override

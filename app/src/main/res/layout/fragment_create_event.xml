@@ -199,7 +199,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:text="Registration Start Time:"
+                    android:text="Registration Start:"
                     style="@style/horizontal_create_event_textview"
                     />
 
@@ -219,7 +219,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:text="Event Registration End Time: "
+                    android:text="Registration End: "
                     style="@style/horizontal_create_event_textview"/>
 
                 <EditText
