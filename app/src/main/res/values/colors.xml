@@ -3,4 +3,13 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="white">#00FFFFFF</color>
+    <color name="background">#673AB7</color>
+    <color name="red">#FF5722</color>
+    <color name="eventColor">#9A1900</color>
+    <!-- #2e3b1f
+#662851
+#838500
+#dbcde6
+#dcdde1-->
 </resources>
