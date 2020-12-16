@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:id="@+id/layout_id">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/searchItemImage"
+                android:src="@drawable/ic_launcher_background"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/searchItemName"
+                    android:text="Event Name"
+                    android:gravity="left"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/eventColor"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:textSize="25dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Location: "
+                            android:gravity="left"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold"
+
+                            android:textColor="#000000"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/searchItemEventLocation"
+                            android:text="Location"
+                            android:gravity="left"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Type:"
+                            android:gravity="left"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/searchItemEvenType"
+                            android:text="FREE"
+                            android:textColor="#0d4930"
+                            android:gravity="left"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:outlineSpotShadowColor="@color/colorPrimary"
+                            android:textSize="15dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Seats: "
+                            android:gravity="left"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold"
+
+                            android:textColor="#000000"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/searchItemEventMaxSeats"
+                            android:text="150"
+                            android:gravity="left"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Fee: "
+                            android:gravity="left"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#000000"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/searchItemEventFee"
+                            android:text="$100"
+                            android:gravity="left"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:textSize="15dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Start: "
+                            android:gravity="left"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold"
+
+                            android:textColor="#000000"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/searchItemEventStart"
+                            android:text="10AM"
+                            android:gravity="left"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="End: "
+                            android:gravity="left"
+                            android:layout_marginTop="3dp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#000000"
+                            android:textSize="15dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/searchItemEventEnd"
+                            android:text="2PM"
+                            android:gravity="left"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:textSize="15dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
