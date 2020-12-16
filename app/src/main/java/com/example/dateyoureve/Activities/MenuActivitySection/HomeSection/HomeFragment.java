@@ -143,7 +143,10 @@ public class HomeFragment extends Fragment {
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
-                        recyclerView.setAdapter(new HomeItemAdapter(homeItemList));
+
+                        if(homeItemList.size()!=0) {
+                            recyclerView.setAdapter(new HomeItemAdapter(homeItemList));
+                        }
 
                     }
                 });
