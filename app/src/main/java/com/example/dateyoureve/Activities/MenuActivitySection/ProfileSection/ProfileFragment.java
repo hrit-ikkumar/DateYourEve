@@ -121,6 +121,7 @@ public class ProfileFragment extends Fragment {
         bio=(TextView)view.findViewById(R.id.profile_bio);
         location=(TextView)view.findViewById(R.id.profile_location);
         mAuth = FirebaseAuth.getInstance();
+
         mCurrentUser = mAuth.getCurrentUser();
         userId = mCurrentUser.getUid();
         documentReference = db.collection("users").document(userId);
@@ -167,8 +168,11 @@ public class ProfileFragment extends Fragment {
     private void sendUsertoLogin()
     {
         Intent i = new Intent(getActivity(), MainActivity.class);
+        mAuth.signOut();
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//makesure user cant go back
         startActivity(i);
-        ((Activity) getActivity()).overridePendingTransition(0, 0);
+
+
     }
 
     private void sendUsertoEditProfile()

@@ -112,19 +112,33 @@ public class SearchFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         searchItemList = new ArrayList<>();
-        mSearchBtn.setOnClickListener(new View.OnClickListener() {
+        mSearchField.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 searchText=mSearchField.getText().toString();
+                searchItemList.clear();
                 db.collection("events").whereEqualTo("EventName",searchText).get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
                                 if (task.isSuccessful()) {
                                     for (QueryDocumentSnapshot document : task.getResult()) {
-                                        String currEvent = Objects.requireNonNull(document.get("EventName")).toString();
+                                        //String currEvent = Objects.requireNonNull(document.get("EventName")).toString();
                                         //Log.d(TAG, document.getId() + " => " + currEvent);
-                                        searchItemList.add(new SearchModel(R.drawable.ic_event_foreground,  document.get("EventName").toString()));
+                                        searchItemList.add(
+                                                new SearchModel(R.drawable.ic_event_foreground,
+                                                        document.get("EventName").toString(),
+                                                        document.get("EventLocation").toString(),
+                                                        document.get("EntryFee").toString(),
+                                                        document.get("EntryType").toString(),
+                                                        document.get("EventMaxSeats").toString(),
+                                                        document.get("EventStartTime").toString(),
+                                                        document.get("EventEndTime").toString(),
+                                                        document.get("EventDescription").toString(),
+                                                        document.get("RegistrationStartTime").toString(),
+                                                        document.get("RegistrationEndTime").toString())
+                                        );
                                     }
 
                                 } else {
@@ -133,6 +147,7 @@ public class SearchFragment extends Fragment {
                                 if(searchItemList.size()!=0) {
                                     recyclerView.setAdapter(new SearchItemAdapter(searchItemList));
                                 }
+
                             }
                         });
             }

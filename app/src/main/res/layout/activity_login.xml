@@ -1,91 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="282dp"
-        android:layout_height="168dp"
-        android:layout_marginTop="56dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_screen_image" />
-
-    <TextView
-        android:id="@+id/date_your_eve"
-        android:layout_width="273dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/verify_your_number"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:text="Verify Your Number" />
-
-    <EditText
-        android:id="@+id/country_code"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
-        android:autofillHints="@string/todo"
-        android:ems="10"
-        android:hint="@string/_91"
-        android:inputType="phone"
-        android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textColorHint="#3C000000"
-        app:layout_constraintEnd_toStartOf="@+id/phone_number"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_your_eve" />
-
-    <EditText
-        android:id="@+id/phone_number"
-        android:layout_width="171dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="92dp"
-        android:autofillHints="@string/todo"
-        android:ems="10"
-        android:hint="@string/_8209062638"
-        android:inputType="phone"
-        android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textColorHint="#3C000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_your_eve" />
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="189dp"
-        android:layout_height="68dp"
-        android:shadowColor="#FFFFFF"
-        android:text="@string/generate_otp"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number"
-        app:layout_constraintVertical_bias="0.078"
-        tools:text="@string/generate_otp" />
-
-    <TextView
-        android:id="@+id/login_form_feedback"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Waiting..."
-        android:textColor="#D84C4C"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="282dp"
+                android:layout_height="168dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="56dp"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/login_screen_image" />
+
+            <TextView
+                android:id="@+id/date_your_eve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/verify_your_number"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                tools:text="Verify Your Number" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/country_code"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/todo"
+                    android:layout_marginHorizontal="30dp"
+                    android:ems="10"
+                    android:hint="@string/_91"
+                    android:inputType="phone"
+                    android:textAlignment="center"
+                    android:textColor="#673AB7"
+                    android:textColorHint="#3C000000"
+                    />
+
+                <EditText
+                    android:id="@+id/phone_number"
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/todo"
+                    android:ems="10"
+                    android:hint="@string/_8209062638"
+                    android:inputType="phone"
+                    android:textAlignment="center"
+                    android:textColor="#673AB7"
+                    android:textColorHint="#3C000000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="68dp"
+                android:shadowColor="#FFFFFF"
+                android:layout_marginTop="20dp"
+                android:text="@string/generate_otp"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                tools:text="@string/generate_otp" />
+
+            <TextView
+                android:id="@+id/login_form_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Waiting..."
+                android:textColor="#D84C4C"
+                android:visibility="invisible"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

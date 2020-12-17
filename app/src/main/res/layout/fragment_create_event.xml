@@ -166,7 +166,6 @@
                 <EditText
                     android:id="@+id/event_start_time"
                     android:hint="@string/format"
-                    android:inputType="datetime"
                     style="@style/horizontal_create_event_text"
                     />
 
@@ -186,7 +185,6 @@
                 <EditText
                     android:id="@+id/event_end_time"
                     android:hint="@string/format"
-                    android:inputType="datetime"
                     style="@style/horizontal_create_event_text"
                     />
 
@@ -206,7 +204,6 @@
                 <EditText
                     android:id="@+id/event_registration_start_time"
                     android:hint="@string/format"
-                    android:inputType="datetime"
                     style="@style/horizontal_create_event_text"
                     />
 
@@ -225,7 +222,6 @@
                 <EditText
                     android:id="@+id/event_registration_end_time"
                     android:hint="@string/format"
-                    android:inputType="datetime"
                     style="@style/horizontal_create_event_text"
                     />
 
@@ -236,7 +232,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp">
 
                 <Button
                     android:id="@+id/create_event"
@@ -252,6 +249,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:text="Cancel" />
+
             </LinearLayout>
 
 

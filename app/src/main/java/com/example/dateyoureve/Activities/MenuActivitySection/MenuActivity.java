@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.dateyoureve.Activities.MainActivity;
 import com.example.dateyoureve.Activities.MenuActivitySection.CreateEventSection.CreateEventFragment;
@@ -60,6 +61,7 @@ public class MenuActivity extends AppCompatActivity {
         // Set Home as Default Fragment
         bottomNavigationView.setSelectedItemId(R.id.bn_home);
 
+
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -103,26 +105,31 @@ public class MenuActivity extends AppCompatActivity {
                 // Set checked home fragment
                 bottomNavigationView.getMenu().getItem(0).setChecked(true);
                 // Return home fragment
+                Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_SHORT).show();
                 return new HomeFragment();
             case R.id.bn_search:
                 // Set checked search fragment
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
                 // Return search fragment
+                Toast.makeText(getApplicationContext(),"Search",Toast.LENGTH_SHORT).show();
                 return new SearchFragment();
             case R.id.bn_create_event:
                 // Set checked create event fragment
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
                 // Return create event fragment
+                Toast.makeText(getApplicationContext(),"Create Event",Toast.LENGTH_SHORT).show();
                 return new CreateEventFragment();
             case R.id.bn_notifications:
                 // Set checked notifications fragment
                 bottomNavigationView.getMenu().getItem(3).setChecked(true);
                 // Return notifications fragment
+                Toast.makeText(getApplicationContext(),"Notifications",Toast.LENGTH_SHORT).show();
                 return new NotificationsFragment();
             case R.id.bn_profile:
                 // Set checked settings fragment
                 bottomNavigationView.getMenu().getItem(4).setChecked(true);
                 // Return settings fragment
+                Toast.makeText(getApplicationContext(),"Profile",Toast.LENGTH_SHORT).show();
                 return new ProfileFragment();
         }
         // Set Default Home Fragment

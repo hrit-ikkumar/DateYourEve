@@ -111,7 +111,7 @@ public class NotificationsFragment extends Fragment {
                                 Log.d(TAG, document.getId() + " => " + currNotification);
                                 notificationItemList.add(new NotificationModel(document.get("notification").toString()));
                             }
-                            Toast.makeText(getContext(),"Inside For Loop",Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getContext(),"Inside For Loop",Toast.LENGTH_LONG).show();
 
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dateyoureve.Activities.MenuActivitySection.MenuActivity;
 import com.example.dateyoureve.R;
@@ -103,10 +104,12 @@ public class OTPVerification extends AppCompatActivity {
         {
             sendUserToHome();
         }
+
     }
 
     public void sendUserToHome() {
         Intent user_profile = new Intent(OTPVerification.this, MenuActivity.class);
+        Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_SHORT).show();
         user_profile.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         user_profile.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(user_profile);

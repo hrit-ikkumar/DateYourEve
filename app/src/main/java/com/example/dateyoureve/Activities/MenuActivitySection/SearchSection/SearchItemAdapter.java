@@ -30,8 +30,17 @@ public class SearchItemAdapter extends RecyclerView.Adapter<SearchItemAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.itemImage.setImageResource(searchItemList.get(position).getEntryFee());
-        holder.itemText.setText(searchItemList.get(position).getEventName());
+        holder.itemImage.setImageResource(searchItemList.get(position).getEventImage());
+        holder.eventName.setText(searchItemList.get(position).getEventName());
+        holder.eventLocation.setText(searchItemList.get(position).getEventLocation());
+        holder.entryFee.setText(searchItemList.get(position).getEntryFee());
+        holder.entryType.setText(searchItemList.get(position).getEntryType());
+        holder.eventMaxSeats.setText(searchItemList.get(position).getEventMaxSeats());
+        holder.eventStartTime.setText(searchItemList.get(position).getEventStartTime());
+        holder.eventEndTime.setText(searchItemList.get(position).getEventEndTime());
+        //holder.eventDescription.setText(searchItemList.get(position).getEventDescription());
+        holder.registrationStartTime.setText(searchItemList.get(position).getRegistrationStartTime());
+        holder.registrationEndTime.setText(searchItemList.get(position).getRegistrationEndTime());
     }
 
     @Override
@@ -40,12 +49,30 @@ public class SearchItemAdapter extends RecyclerView.Adapter<SearchItemAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView itemImage;
-        TextView itemText;
+        ImageView  itemImage;
+        TextView eventName;
+        TextView eventLocation;
+        TextView entryFee;
+        TextView entryType;
+        TextView eventMaxSeats;
+        TextView eventStartTime;
+        TextView eventEndTime;
+        TextView eventDescription;
+        TextView registrationStartTime;
+        TextView registrationEndTime;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemImage = itemView.findViewById(R.id.searchItemImage);
-            itemText = itemView.findViewById(R.id.searchItemName);
+            eventName = itemView.findViewById(R.id.searchItemName);
+            eventLocation = itemView.findViewById(R.id.searchItemEventLocation);
+            entryFee = itemView.findViewById(R.id.searchItemEventFee);
+            entryType = itemView.findViewById(R.id.searchItemEvenType);
+            eventMaxSeats = itemView.findViewById(R.id.searchItemEventMaxSeats);
+            eventStartTime = itemView.findViewById(R.id.searchItemEventStart);
+            eventEndTime = itemView.findViewById(R.id.searchItemEventEnd);
+            //eventDescription = itemView.findViewById(R.id.searchItemEventDescription);
+            registrationStartTime = itemView.findViewById(R.id.searchItemEventRegistrationStart);
+            registrationEndTime = itemView.findViewById(R.id.searchItemEventRegistrationEnd);
         }
     }
 }
